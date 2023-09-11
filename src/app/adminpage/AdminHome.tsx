@@ -399,7 +399,7 @@ export default function AdminHome() {
                         fontWeight: "bold",
                       }}
                     >
-                    {datas.totalCars}
+                    {/* {datas.totalCars} */}
                     </Typography>
                     <Typography
                       sx={{ fontSize: 15, textAlign: "center", color: "gray" }}
@@ -433,7 +433,7 @@ export default function AdminHome() {
                         fontWeight: "bold",
                       }}
                     >
-                      {datas.totalCategoryes}
+                      {/* {datas.totalCategoryes} */}
                     </Typography>
                     <Typography
                       sx={{ fontSize: 15, textAlign: "center", color: "gray" }}
@@ -467,7 +467,7 @@ export default function AdminHome() {
                         fontWeight: "bold",
                       }}
                     >
-                {datas.totalBrands}
+                {/* {datas.totalBrands} */}
 
                     </Typography>
                     <Typography
@@ -502,7 +502,7 @@ export default function AdminHome() {
                         fontWeight: "bold",
                       }}
                     >
-                         {datas.totalEnquiryes}
+                         {/* {datas.totalEnquiryes} */}
                     </Typography>
                     <Typography
                       sx={{ fontSize: 15, textAlign: "center", color: "gray" }}
@@ -536,7 +536,7 @@ export default function AdminHome() {
                         fontWeight: "bold",
                       }}
                     >
-                {datas.totalContactInquires}
+                {/* {datas.totalContactInquires} */}
 
                     </Typography>
                     <Typography
@@ -571,7 +571,7 @@ export default function AdminHome() {
                         fontWeight: "bold",
                       }}
                     >
-                      {datas.totalLocation}
+                      {/* {datas.totalLocation} */}
                     </Typography>
                     <Typography
                       sx={{ fontSize: 15, textAlign: "center", color: "gray" }}

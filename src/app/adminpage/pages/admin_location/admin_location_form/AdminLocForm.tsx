@@ -9,6 +9,7 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  SelectChangeEvent,
   TextField,
 } from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
@@ -37,13 +38,13 @@ const AdminLocForm = () => {
   useEffect(() => {
     if (name) {
       setTextName(name);
-      setSelect(status);
+      setSelect(status || '');
     }
   }, []);
-  const handleTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleTextChange = (event: SelectChangeEvent<string>) => {
     setTextName(event.target.value);
   };
-  const handleSelectChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSelectChange = (event: SelectChangeEvent<string>) => {
     // debugger;
     setSelect(event.target.value);
   };
@@ -57,24 +58,26 @@ const AdminLocForm = () => {
     formState: { errors },
   } = useForm<ReqDocsFormData>();
 
-  const onSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onSubmit: any = (e:any) => {
     e.preventDefault();
+    // debugger
     if (!textName) {
       setErrors({ ...error, name: true });
     }
     if (!select) {
       setErrors({ ...error, select: true });
     }
-    const payload = {};
+    const payload: { name: string, status:string } = {name: textName, status: select};
     payload.name = textName;
     payload.status = select;
     console.log(payload, "payload");
-    router.push("/adminpage/pages/admin_location")
+   router.push("/adminpage/pages/admin_location")
   };
+
   return (
     <div className="addnew_cate">
       <Box>
-        <form onSubmit={(e) => handleSubmit(onSubmit(e))}>
+        <form onSubmit={(e:any) => handleSubmit(onSubmit(e))}>
           <Container className="catecontbox">
             <div className="newcate_head">
               <h1>Add New Location</h1>
@@ -92,7 +95,7 @@ const AdminLocForm = () => {
                       {...register("name", { required: true })}
                       // error={error.name}
                       // helperText={error.name && "This name field is required"}
-                      onChange={(e) => handleTextChange(e)}
+                      onChange={(e:any) => handleTextChange(e)}
                     />
                   </FormControl>
                 </Grid>
